@@ -1,0 +1,64 @@
+<form [formGroup]="formGroupEmpleado">
+    <div class="row scroll">
+        <mat-card class="col-12">
+            <div class="row">
+                <mat-card-title class="col-12 text-center pb-4">Actualizar Empleado {{data._empleado.Id}}</mat-card-title>
+                <div class="col-4 pb-4">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="ID" value="{{data._empleado.Id}}" formControlName="Id" [readonly]="true">
+                        <mat-error *ngIf="formGroupEmpleado.get('Id').invalid">
+                            {{getErrorMessage("Id")}}
+                        </mat-error>
+                    </mat-form-field>
+                    <span>*</span>
+                </div>
+                <div class="col-4 pb-4">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="ID" value="{{data._empleado.Nombre}}" formControlName="Nombre">
+                        <mat-error *ngIf="formGroupEmpleado.get('Nombre').invalid">
+                            {{getErrorMessage("Nombre")}}
+                        </mat-error>
+                    </mat-form-field>
+                    <span>*</span>
+                </div>
+
+                <div class="col-4 pb-4">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Cargo" value="{{data._empleado.Cargo}}" formControlName="Cargo">
+                        <mat-error *ngIf="formGroupEmpleado.get('Cargo').invalid">
+                            {{getErrorMessage("Cargo")}}
+                        </mat-error>
+                    </mat-form-field>
+                    <span>*</span>
+                </div>
+                
+                <div class="col-4 pb-4">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Teléfono" value="{{data._empleado.Telefono}}" formControlName="Telefono">
+                        <mat-error *ngIf="formGroupEmpleado.get('Telefono').invalid">
+                            {{getErrorMessage("Telefono")}}
+                        </mat-error>
+                    </mat-form-field>
+                    <span>*</span>
+                </div>
+                
+                <div class="col-4 pb-4">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Contrato" value="{{data._empleado.Contrato}}" formControlName="Contrato">
+                        <mat-error *ngIf="formGroupEmpleado.get('Contrato').invalid">
+                            {{getErrorMessage("Contrato")}}
+                        </mat-error>
+                    </mat-form-field>
+                    <span>*</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 pb-4"></div>
+                <div id="divCrear" class="col-4 form-group">
+                    <button id="btnCrear" class="btn btn-primary" (click)="ActualizarEmpleado()" mat-button
+                        [disabled]="!formGroupEmpleado.valid">Actualizar</button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</form>

@@ -1,0 +1,21 @@
+.edit {
+    color: #f59c00;
+    font-size: 30px;
+    cursor: pointer;
+}
+.add{
+    color: #5bc500;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.delete{
+    color: #ff374a;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+#btnCrear{
+    width: 100%;
+}

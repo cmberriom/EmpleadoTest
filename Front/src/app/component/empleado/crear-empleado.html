@@ -1,0 +1,52 @@
+<form [formGroup]="formGroupEmpleado">
+    <div class="row scroll">
+        <mat-card class="col-12">
+            <div class="row">
+                <mat-card-title class="col-12 text-center pb-4">Crear Empleado</mat-card-title>
+                <div class="col-4 pb-4">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Nombre" formControlName="Nombre">
+                        <mat-error *ngIf="formGroupEmpleado.get('Nombre').invalid">
+                            {{getErrorMessage("Nombre")}}
+                        </mat-error>
+                    </mat-form-field>
+                    <span>*</span>
+                </div>
+                <div class="col-4 pb-4">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Cargo" formControlName="Cargo">
+                        <mat-error *ngIf="formGroupEmpleado.get('Cargo').invalid">
+                            {{getErrorMessage("Cargo")}}
+                        </mat-error>
+                    </mat-form-field>
+                    <span>*</span>
+                </div>
+                <div class="col-4 pb-4">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Teléfono" formControlName="Telefono">
+                        <mat-error *ngIf="formGroupEmpleado.get('Telefono').invalid">
+                            {{getErrorMessage("Telefono")}}
+                        </mat-error>
+                    </mat-form-field>
+                    <span>*</span>
+                </div>
+                <div class="col-4 pb-4">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Contrato" formControlName="Contrato">
+                        <mat-error *ngIf="formGroupEmpleado.get('Contrato').invalid">
+                            {{getErrorMessage("Contrato")}}
+                        </mat-error>
+                    </mat-form-field>
+                    <span>*</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 pb-4"></div>
+                <div id="divCrear" class="col-4 form-group">
+                    <button id="btnCrear" class="btn btn-primary" mat-button
+                        [disabled]="!formGroupEmpleado.valid" (click)="CrearEmpleado()">Crear</button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</form>
